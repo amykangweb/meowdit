@@ -3,7 +3,7 @@ FactoryGirl.define do
     word "Meow Meow!"
   end
 
-  factory :meow2 do
+  factory :meow2, class: Meow do
     word "meow"
   end
 end

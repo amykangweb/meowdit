@@ -12,7 +12,7 @@ describe 'Creating Post' do
     fill_in "Title", with: "First Post"
     fill_in "Content", with: "This content should be replaced."
     click_button "Create Post"
-    expect(page).to have_content("Successfully created post.")
+    expect(page).to have_content("Post was successfully created.")
   end
 
   it "shows post with replaced title" do
