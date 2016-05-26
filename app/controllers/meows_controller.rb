@@ -7,11 +7,6 @@ class MeowsController < ApplicationController
     @meows = Meow.all
   end
 
-  # GET /meows/1
-  # GET /meows/1.json
-  def show
-  end
-
   # GET /meows/new
   def new
     @meow = Meow.new
@@ -28,7 +23,7 @@ class MeowsController < ApplicationController
 
     respond_to do |format|
       if @meow.save
-        format.html { redirect_to @meow, notice: 'Meow was successfully created.' }
+        format.html { redirect_to meows_path, notice: 'Meow was successfully created.' }
         format.json { render :show, status: :created, location: @meow }
       else
         format.html { render :new }
