@@ -3,6 +3,7 @@ require 'rails_helper'
 describe 'Creating meow' do
   before do
     visit '/'
+    click_link "Meow Index"
     click_link "New Meow"
   end
 
