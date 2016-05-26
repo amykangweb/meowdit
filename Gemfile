@@ -16,6 +16,7 @@ end
 
 group :development do
   gem 'capybara'
+  gem 'factory_girl_rails'
   gem 'rspec-rails', '~> 3.4'
   gem 'spring'
   gem 'web-console', '~> 2.0'
