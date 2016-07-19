@@ -2,9 +2,11 @@ class Post < ActiveRecord::Base
   validates :title, presence: true
   validates :content, presence: true
 
-  before_save :replace_title_with_meow, :replace_content_with_meow
-  before_update :replace_title_with_meow, :if => :title_changed?
-  before_update :replace_content_with_meow, :if => :content_changed?
+  # Callbacks
+  # Check if post title/content changed and replace with meows if true.
+  before_save :replace_title_with_meow, :if => :title_changed?
+  before_save :replace_content_with_meow, :if => :content_changed?
+  # End Callbacks
 
   private
 

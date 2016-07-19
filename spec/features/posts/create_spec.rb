@@ -3,7 +3,6 @@ require 'rails_helper'
 describe 'Creating Post' do
   before do
     @meow = FactoryGirl.create(:meow)
-    @meow2 = FactoryGirl.create(:meow2)
     visit '/'
     click_link "New Post"
   end
@@ -28,10 +27,10 @@ describe 'Creating Post' do
     fill_in "Content", with: "This content should be replaced."
     click_button "Create Post"
     expect(page).to_not have_content("This content should be replaced.")
-    expect(page).to have_content(@meow2.word)
+    expect(page).to have_content(@meow.word)
   end
 
-  it "shows error message is post title is blank" do
+  it "shows error message if post title is blank" do
     fill_in "Title", with: " "
     fill_in "Content", with: "This content should be replaced."
     click_button "Create Post"
