@@ -2,6 +2,8 @@
 
 <h1>Listing Meows</h1>
 
+<% cache "meows", expires_in: 5.minutes do %>
+
 <table>
   <thead>
     <tr>
@@ -21,6 +23,8 @@
     <% end %>
   </tbody>
 </table>
+
+<% end %>
 
 <br>
 
